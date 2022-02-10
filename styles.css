@@ -1,4 +1,89 @@
-body {
-    margin: auto;
-    width: 50%;
+/* || VARIABLES  */
+
+:root {
+    --main-bg-color: #2a6592;
+    --margin-unit: 20px;
+    --padding-unit: 10px;
+    --text-color: white;
+    --font-unit: 24px;
 }
+
+
+/* || GENERAL STYLES & Typography */
+
+* {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    /* background-color: black; */
+    margin: auto;
+    width: 70%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+}
+
+
+/* || NAVBAR  */
+
+header {
+    margin: calc(2 * var(--margin-unit));
+    font-size: var(--font-unit);
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    /* flex: 1; */
+    text-align: center;
+    padding: calc(2*var(--padding-unit));
+}
+
+
+/* || MAIN  */
+
+main h1 {
+    margin: calc(2* var(--margin-unit));
+}
+
+#bio {
+    display: flex;
+    margin: var(--margin-unit);
+}
+
+#portrait img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* add css animation of bio and avator sliding in */
+
+
+/* Start styling projects (template images, links) */
+
+
+/* Start styling blog (template text, pictures) */
+
+
+/* || FOOTER  */

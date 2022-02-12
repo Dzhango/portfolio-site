@@ -17,8 +17,8 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -26,36 +26,100 @@
         <h1>Welcome to my personal portfolio</h1>
         <section id="bio">
             <div id="portrait">
-                <img src="profile.WebP" alt="Portrait Image">
+                <img id="avatar" src="media/profile.WebP" alt="Portrait Image">
+                <aside>
+                    <ul>
+                        <li id="resume-link"><a href="https://docs.google.com/document/d/1e4_t7hTj4bJGwVMrqio8m5dUfSOUHcWPIIcH3FAjc3Y/edit?usp=sharing">Resume</a></li>
+                        <li>
+                            <a href="https://www.instagram.com/dzhangir.b/">
+                                <img class="icons" src="media/instagram-brands.webp" alt="Instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/dbayanda/">
+                                <img class="icons" src="media/linkedin-in-brands.webp" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Dzhango">
+                                <img class="icons" src="media/github-brands.webp" alt="Github">
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
             </div>
-            <div>
-                <h2>A little about me</h2>
-                <!-- <img width=400 src="/profile.jpg " alt="Portrait "> -->
-                <p> IntroduEtiam Utorem. Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam nonction
-                </p>
-                <!-- <aside>
-                    <a href="#">Link to my resume</a>
-                </aside> -->
+            <div id="introduction">
+                <h2>Hey there, I am Dzhangir!</h2>
+                <div>
+                    <p>
+                        I am a 3rd year computer science student at University of California, San Diego. I am an aspiring software engineer, interested in web technologies and product development. I value clear communication, growth mindset, and integrity of my work. I love
+                        doing jiu-jitsu, boxing and watching UFC fights.
+                        <span>Thank you for visiting my website, I am happy to see you here!</span>
+                    </p>
+                </div>
             </div>
         </section>
-        <!-- <section>
-            <h3>A nibh rutrum consequat.</h3>
-            <div>
-                Project 1
-                <code>print("Hello World ");</code>
-            </div>
-            <div>
-                Project 2
-            </div>
-            <div>
-                Project 3
-            </div>
-            <div>
-                Project 4
-            </div>
-        </section> -->
+        <section id="projects">
+            <h2>Projects Gallery</h2>
+            <container id="projects-container">
+                <div class="project">
+                    <img src="media/project1.webp" alt="Project 1">
+                    <div class="project-desc">
+                        <h3>Project 1</h3>
+                        <p>Uptone is a consumer-media mobile startup being built for transforming monotonous content consumption into a fun and engaging experience. I have contributed to the implementation of the voice control part of the application. Utilizing
+                            AWS Transcribe API, I used the EXPO native voice recordings to control the application interface.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="media/project2.webp" alt="Project 2">
+                    <div class="project-desc">
+                        <h3>Project 2</h3>
+                        <p>This is a goal-sharing platform, users can register and create/share their goals libararies. I have used the MERN stack, and implemented authentication with express and JWT. This was my first big CRUD project, was particularly
+                            inspiring for me.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="media/project3.webp" alt="Project 3">
+                    <div class="project-desc">
+                        <h3>Project 3</h3>
+                        <p>This is a Web Search App to look up data on any stock. The running line at the bottom, scrapes the WallStreetBets subreddit, and provides the number of mentions and top comments for the current stock.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="media/project4.webp" alt="Project 4">
+                    <div class="project-desc">
+                        <h3>Project 4</h3>
+                        <p>This is a Web App, that calculates daily caloric intake based on physical measurements. I have built it when I was very new to react, so I have learned a lot of functional component structure, and state management. Plus, fitnesswas
+                            always a hobby of mine.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="media/project5.webp" alt="Project 5">
+                    <div class="project-desc">
+                        <h3>Project 5</h3>
+                        <p>Huffman Compressor is a compression program that can take a large text file and securely compress it. I utilized an efficient algorithm for header composition which more than double the speed of compression.</p>
+                    </div>
+                </div>
+            </container>
+        </section>
+        <template>
+            <section id="blog">
+                <container>
+                    <article>Placeholder text</article>
+                </container>
+                <container>
+                    <article>Placeholder text</article>
+                </container>
+                <container>
+                    <article>Placeholder text</article>
+                </container>
+                <container>
+                    <article>Placeholder text</article>
+                </container>
+            </section>
+        </template>
     </main>
-    <footer>
+    <!-- <footer>
         <section>
             <button>Contact me via email</button>
         </section>
@@ -72,7 +136,7 @@
             </ul>
         </section>
 
-    </footer>
+    </footer> -->
 </body>
 
 </html>

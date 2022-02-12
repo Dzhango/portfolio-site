@@ -1,11 +1,27 @@
 /* || VARIABLES  */
 
+
+/* Document level adjustments */
+
+@media (max-width: 800px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 13px;
+    }
+}
+
 :root {
-    --main-bg-color: #2a6592;
-    --margin-unit: 20px;
-    --padding-unit: 10px;
-    --text-color: white;
-    --font-unit: 24px;
+    --main-bg-color: #fff;
+    --margin-unit: 1rem;
+    --padding-unit: 1rem;
+    --text-color: #333;
+    --font-unit: 1rem;
+    --lineHeight-unit: 1.5rem;
 }
 
 
@@ -22,14 +38,15 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-    color: white;
+    color: #333;
     text-decoration: none;
 }
 
 body {
     /* background-color: black; */
     margin: auto;
-    width: 70%;
+    font-size: 17px;
+    /* width: 80%; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     color: var(--text-color);
     background-color: var(--main-bg-color);
@@ -40,7 +57,7 @@ body {
 
 header {
     margin: calc(2 * var(--margin-unit));
-    font-size: var(--font-unit);
+    font-size: calc(1.5 *var(--font-unit));
 }
 
 header nav ul {
@@ -52,31 +69,152 @@ header nav ul {
 }
 
 header nav ul li {
-    /* flex: 1; */
     text-align: center;
-    padding: calc(2*var(--padding-unit));
+    padding: calc(var(--padding-unit));
 }
 
 
 /* || MAIN  */
 
 main h1 {
-    margin: calc(2* var(--margin-unit));
+    margin: var(--margin-unit);
+    margin-bottom: 3rem;
 }
 
 #bio {
     display: flex;
     margin: var(--margin-unit);
+    font-size: var(--font-unit);
+    line-height: var(--lineHeight-unit);
+    flex-direction: row;
+    flex-wrap: wrap;
+    animation-duration: 3s;
+    animation-name: slideinRight;
 }
 
-#portrait img {
-    width: 300px;
-    height: 300px;
+#avatar {
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     object-fit: cover;
+    margin: var(--margin-unit);
+    margin-right: var(--margin-unit);
+}
+
+#resume-link {
+    padding: var(--padding-unit);
+}
+
+#portrait .icons {
+    margin: var(--margin-unit);
+    object-fit: cover;
+    width: 2rem;
+    height: 2rem;
+    text-align: center center;
+}
+
+#portrait a {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#portrait ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#portrait aside {
+    margin: var(--margin-unit);
+    margin-top: 0;
+}
+
+#portrait li {
+    text-align: center;
+}
+
+#introduction {
+    width: 70%;
+}
+
+#introduction h2 {
+    margin-bottom: var(--margin-unit);
+}
+
+#introduction div {
+    line-height: 2rem;
+    overflow-wrap: break-word;
+    animation-duration: 3s;
+    animation-name: slideinRight;
+}
+
+#projects h2 {
+    padding: var(--padding-unit);
+}
+
+#projects-container {
+    display: grid;
+    grid-template-columns: 2;
+}
+
+.project {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: var(--padding-unit);
+    /* margin: auto; */
+}
+
+.project:nth-child(odd) {
+    background-color: #ececec;
+}
+
+.project-desc {
+    line-height: var(--lineHeight-unit);
+    flex: 1;
+    overflow-wrap: break-word;
+    padding: 0 calc(2*var(--padding-unit));
+}
+
+.project img {
+    flex: 1;
+    min-width: 20rem;
+    max-width: 40rem;
+    /* max-width: 45%; */
+    object-fit: contain;
 }
 
 
+/* Animations */
+
+
+/* Copied from MDN examples */
+
+@keyframes slideinRight {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+@keyframes slideinLeft {
+    from {
+        margin-right: 100%;
+        width: 300%;
+    }
+    to {
+        margin-right: 0%;
+        width: 100%;
+    }
+}
+
+Copy to Clipboard
 /* add css animation of bio and avator sliding in */
 
 
@@ -86,4 +224,9 @@ main h1 {
 /* Start styling blog (template text, pictures) */
 
 
-/* || FOOTER  */
+/* ASSIGNMENT MILESTONES 
+    1. Responsive design, hamburger, touch aware ideas, font scalibility
+    2. Image usage for different devices
+    3. Aestics and usability
+
+*/

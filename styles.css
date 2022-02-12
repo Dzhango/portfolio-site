@@ -76,6 +76,12 @@ header nav ul li {
 
 /* || MAIN  */
 
+main {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
 main h1 {
     margin: var(--margin-unit);
     margin-bottom: 3rem;
@@ -90,6 +96,7 @@ main h1 {
     flex-wrap: wrap;
     animation-duration: 3s;
     animation-name: slideinRight;
+    justify-content: center;
 }
 
 #avatar {
@@ -103,6 +110,11 @@ main h1 {
 
 #resume-link {
     padding: var(--padding-unit);
+}
+
+#portrait {
+    animation-duration: 1s;
+    animation-name: slideinRight;
 }
 
 #portrait .icons {
@@ -136,6 +148,8 @@ main h1 {
 
 #introduction {
     width: 70%;
+    animation-duration: 1s;
+    animation-name: slideinRight;
 }
 
 #introduction h2 {
@@ -145,8 +159,6 @@ main h1 {
 #introduction div {
     line-height: 2rem;
     overflow-wrap: break-word;
-    animation-duration: 3s;
-    animation-name: slideinRight;
 }
 
 #projects h2 {
@@ -156,6 +168,7 @@ main h1 {
 #projects-container {
     display: grid;
     grid-template-columns: 2;
+    row-gap: 20px;
 }
 
 .project {
@@ -165,6 +178,7 @@ main h1 {
     flex-wrap: wrap;
     padding: var(--padding-unit);
     /* margin: auto; */
+    row-gap: 15px;
 }
 
 .project:nth-child(odd) {
@@ -172,7 +186,7 @@ main h1 {
 }
 
 .project-desc {
-    line-height: var(--lineHeight-unit);
+    line-height: calc(1.5 * var(--lineHeight-unit));
     flex: 1;
     overflow-wrap: break-word;
     padding: 0 calc(2*var(--padding-unit));

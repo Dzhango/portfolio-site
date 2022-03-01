@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Native Dialogs">
+    <meta name="author" content="Dzhangir Bayandarov">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dialogs</title>
+</head>
+
+<body>
+    <button>Alert</button>
+    <button>Confirm</button>
+    <button>Prompt</button>
+
+    <dialog id="alert">
+        Alert pressed!
+        <button id="close">Close</button>
+    </dialog>
+    <dialog id="confirm">
+        Do you confirm?
+        <button id="cancel-confirm">Cancel</button>
+        <button id="ok-confirm">OK</button>
+    </dialog>
+    <dialog id="prompt">
+        <label for="name">What is your name?</label>
+        <input type="text" id="name">
+        <button id="cancel-prompt">Cancel</button>
+        <button id="ok-prompt">OK</button>
+    </dialog>
+
+    <output></output>
+</body>
+<script src="purify.min.js"></script>
+<script type="module" src="customdialog.js"></script>
+
+</html>

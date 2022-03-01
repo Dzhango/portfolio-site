@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CRUD">
+    <meta name="author" content="Dzhangir Bayandarov">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+
+<body>
+    <h1>Blog Posts</h1>
+    <section id="posts">
+    </section>
+    <button id="addPost">Add post</button>
+    <dialog id="addPrompt">
+        <label for="title">Title:</label>
+        <input type="text" id="add-title">
+
+        <label for="summary">Summary:</label>
+        <input type="text" id="add-summary">
+
+        <button id="cancelPrompt">Cancel</button>
+        <button id="confirmPrompt">OK</button>
+    </dialog>
+    <dialog id="deletePrompt">
+        <p>Are you sure you want to delete?</p>
+        <button id="cancelDelete">Cancel</button>
+        <button id="confirmDelete">OK</button>
+    </dialog>
+    <dialog id="editPrompt">
+        <label for="title">Title:</label>
+        <input type="text" id="edit-title">
+
+        <label for="summary">Summary:</label>
+        <input type="text" id="edit-summary">
+
+        <button id="cancelEdit">Cancel</button>
+        <button id="confirmEdit">OK</button>
+    </dialog>
+</body>
+<script src="purify.min.js "></script>
+<script type="module" src="blog.js"></script>
+
+</html>

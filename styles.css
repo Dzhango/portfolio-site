@@ -95,7 +95,7 @@ main h1 {
     flex-direction: row;
     flex-wrap: wrap;
     animation-duration: 3s;
-    animation-name: slideinRight;
+    /* animation-name: slideinRight; */
     justify-content: center;
 }
 
@@ -114,7 +114,7 @@ main h1 {
 
 #portrait {
     animation-duration: 1s;
-    animation-name: slideinRight;
+    /* animation-name: slideinRight; */
 }
 
 #portrait .icons {
@@ -149,7 +149,7 @@ main h1 {
 #introduction {
     width: 70%;
     animation-duration: 1s;
-    animation-name: slideinRight;
+    /* animation-name: slideinRight; */
 }
 
 #introduction h2 {

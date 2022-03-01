@@ -1,9 +1,6 @@
 window.addEventListener('DOMContentLoaded', init);
 
 
-//add confirm cancel
-//edit confirm cancel
-//delete confirm cancel
 export function init() {
     console.log("fire");
     populateBlog();
@@ -17,8 +14,8 @@ export function init() {
 
     //add blog
     add.addEventListener('click', () => {
-        addPrompt.querySelector("#title").value = "";
-        addPrompt.querySelector("#summary").value = "";
+        addPrompt.querySelector("#add-title").value = "";
+        addPrompt.querySelector("#add-summary").value = "";
         addPrompt.showModal();
     });
 
@@ -36,10 +33,15 @@ export function init() {
         addPost(title, summary);
     });
 
-    confirmEdit.addEventListener('click', (e) => {
-        editPrompt.close();
-        editPost(e);
-    })
+    // confirmEdit.addEventListener('click', (e) => {
+    //     editPrompt.close();
+    //     editPost(e);
+    // })
+
+    // confirmEdit.addEventListener('click', (e) => {
+    //     editPrompt.close();
+    //     editPost(e);
+    // })
 
 }
 
@@ -73,6 +75,9 @@ function populateBlog() {
         const article = document.getElementById(`${data.id}`)
         const editBtn = article.querySelector('.edit');
         const deleteBtn = article.querySelector('.delete');
+        const confirmEdit = article.querySelector('.edit');
+        const confirmDelete = article.querySelector('.delete');
+
 
         editBtn.addEventListener('click', (e) => {
             editPrompt.showModal();
@@ -83,6 +88,16 @@ function populateBlog() {
         deleteBtn.addEventListener('click', () => {
             deletePrompt.showModal();
         });
+
+        confirmEdit.addEventListener('click', (e) => {
+            editPrompt.close();
+            editPost(e);
+        })
+
+        confirmDelete.addEventListener('click', (e) => {
+            editPrompt.close();
+            deletePost(e);
+        })
 
     }
 }
@@ -118,16 +133,16 @@ function deletePost(e) {
 
 function editPost(e) {
 
-    const post = localStorage.getItem(e.target.parentNode.id);
+    const post = JSON.parse(localStorage.getItem(e.target.parentNode.id));
     if (post !== null) {
 
-        let title = document.querySelector("#add-title");
+        let title = document.querySelector("#edit-title");
         title = DOMPurify.sanitize(title.value);
-        let summary = document.querySelector("#add-summary");
+        let summary = document.querySelector("#edit-summary");
         summary = DOMPurify.sanitize(summary.value);
 
-        data.title = title;
-        data.summary = summary;
+        post.title = title;
+        post.summary = summary;
 
         document.querySelector('#confirmEdit').addEventListener('click', () => {
             localStorage.setItem(e.target.parentNode.id, JSON.stringify(data));

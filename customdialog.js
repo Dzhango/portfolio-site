@@ -43,7 +43,7 @@ export function customdialog() {
             output.innerHTML = cleanVal;
             output.innerHTML = `Prompt result: ${cleanVal}`;
         } else {
-            output.innerHTML = 'User didn\'t enter anything';
+            output.innerHTML = 'User didn\t enter anything';
         }
     })
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodtest</title>
+</head>
+
+<body>
+    <form id="request">
+        <fieldset>
+            <label for="id">Id:</label>
+            <input type="number" name="id" id="id">
+        </fieldset>
+        <fieldset>
+            <label for="Article_name">Article_name:</label>
+            <input type="text" name="article_name" id="Article_name">
+        </fieldset>
+        <fieldset>
+            <label for="article_body">Article_body:</label>
+            <textarea name="article_body" id="article_body" cols="30" rows="10"></textarea>
+        </fieldset>
+        <fieldset hidden>
+            <input type="date" name="date" id="date">
+        </fieldset>
+        <fieldset>
+            <label for="request_type">Request type:</label>
+            <input type="radio" name="request_type" id="request_type_XHR">XHR
+            <input type="radio" name="request_type" id="request_type_fetch">Fetch
+        </fieldset>
+        <input type="submit" value="getBtn" id="get">
+        <input type="submit" value="postBtn" id="post">
+        <input type="submit" value="putBtn" id="put">
+        <input type="submit" value="deleteBtn" id="delete">
+    </form>
+
+    <output id="response">
+        <pre id="headers"></pre>
+        <pre id="body"></pre>
+    </output>
+    <script src="scripts/methodtest.js" defer></script>
+</body>
+
+</html>

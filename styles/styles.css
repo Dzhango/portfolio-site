@@ -5,13 +5,13 @@
 
 @media (max-width: 800px) {
     body {
-        font-size: 15px;
+        font-size: 17px;
     }
 }
 
 @media (max-width: 400px) {
     body {
-        font-size: 13px;
+        font-size: 15px;
     }
 }
 
@@ -45,7 +45,7 @@ a:active {
 body {
     /* background-color: black; */
     margin: auto;
-    font-size: 17px;
+    font-size: 20px;
     /* width: 80%; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     color: var(--text-color);
@@ -56,8 +56,9 @@ body {
 /* || NAVBAR  */
 
 header {
-    margin: calc(2 * var(--margin-unit));
+    margin: 0 0 calc(2 * var(--margin-unit)) 0;
     font-size: calc(1.5 *var(--font-unit));
+    background-color: rgb(236, 236, 236);
 }
 
 header nav ul {
@@ -71,7 +72,38 @@ header nav ul {
 header nav ul li {
     text-align: center;
     padding: calc(var(--padding-unit));
+    flex: 1;
 }
+
+
+/* Buttons styles start */
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #333;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+
+/* Button styles end */
 
 
 /* || MAIN  */
@@ -79,7 +111,7 @@ header nav ul li {
 main {
     max-width: 1200px;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto var(--margin-unit) auto;
 }
 
 main h1 {
@@ -90,7 +122,6 @@ main h1 {
 #bio {
     display: flex;
     margin: var(--margin-unit);
-    font-size: var(--font-unit);
     line-height: var(--lineHeight-unit);
     flex-direction: row;
     flex-wrap: wrap;
@@ -108,20 +139,24 @@ main h1 {
     margin-right: var(--margin-unit);
 }
 
-#resume-link {
+
+/* #resume-link {
     padding: var(--padding-unit);
-}
+} */
 
 #portrait {
     animation-duration: 1s;
     /* animation-name: slideinRight; */
 }
 
-#portrait .icons {
-    margin: var(--margin-unit);
+#portrait figure {
+    font-size: var(--font-unit);
+}
+
+.icons {
     object-fit: cover;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     text-align: center;
 }
 
@@ -177,6 +212,8 @@ main h1 {
     padding: var(--padding-unit);
     /* margin: auto; */
     row-gap: 15px;
+    border-bottom: solid #333 0.5px;
+    /* border-radius: 5%; */
 }
 
 .project:nth-child(odd) {
@@ -216,19 +253,62 @@ main h1 {
     }
 }
 
-
-/* add css animation of bio and avator sliding in */
-
-
-/* Start styling projects (template images, links) */
+.typewriter h1 {
+    animation: fadeIn linear 1.5s;
+}
 
 
-/* Start styling blog (template text, pictures) */
+/* The typing effect */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
-/* ASSIGNMENT MILESTONES 
-    1. Responsive design, hamburger, touch aware ideas, font scalibility
-    2. Image usage for different devices
-    3. Aestics and usability
+/* The typewriter cursor effect */
 
-*/
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: #333;
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    margin: 2.5rem auto;
+    /* display: flex; */
+    height: 10rem;
+    text-align: center;
+}
+
+#footer {
+    max-width: 1200px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2.5rem; */
+}
+
+footer figure {
+    /* float: right; */
+    flex: 1;
+}
+
+footer figure:hover {
+    cursor: pointer;
+}

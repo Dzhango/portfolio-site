@@ -131,6 +131,7 @@ main h1 {
 }
 
 #avatar {
+    /* width: calc(20rem-10px); */
     width: 20rem;
     height: 20rem;
     border-radius: 50%;

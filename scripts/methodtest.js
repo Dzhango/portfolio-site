@@ -7,6 +7,7 @@ const output = document.querySelector("output");
 
 window.onload = function() {
     // form.addEventListener('submit', formSubmit);
+    setDate();
     getBtn.addEventListener('click', xhrRequest);
     postBtn.addEventListener('click', xhrRequest);
     putBtn.addEventListener('click', xhrRequest);
@@ -14,7 +15,6 @@ window.onload = function() {
 }
 
 function xhrRequest(e) {
-    setDate();
     const method = e.target.id;
     var xhr = new XMLHttpRequest();
     const URL = `https://httpbin.org/${method}`;
@@ -55,17 +55,6 @@ function xhrRequest(e) {
         console.log(document.forms.request)
         xhr.send(formData)
     }
-    // } else if (method === "put") {
-    //     //get all form data
-    //     console.log(document.forms.request)
-    //     xhr.send(formData)
-    // } else if (method === "delete") {
-    //     xhr.send(formData)
-    // }
-
-    // xhr.onload = function() {
-    //     alert(`Loaded: ${xhr.status} ${xhr.response}`);
-    // };
 
     xhr.onerror = function() { // only triggers if the request couldn't be made at all
         alert(`Network Error`);
@@ -78,11 +67,12 @@ function xhrRequest(e) {
 
 function setDate() {
     const currentdate = new Date();
-    const datetime = "Last Sync: " + currentdate.getDate() + "/" +
+    const datetime = currentdate.getDate() + "/" +
         (currentdate.getMonth() + 1) + "/" +
-        currentdate.getFullYear() + " @ " +
+        currentdate.getFullYear() + " " +
         currentdate.getHours() + ":" +
         currentdate.getMinutes() + ":" +
         currentdate.getSeconds();
     document.querySelector("#date").value = datetime;
+    console.log(document.querySelector("#date"));
 }

@@ -133,9 +133,9 @@ function loadHome(e) {
     auth.onAuthStateChanged(function(user) {
         if (user) {
             document.querySelector("#login-container").setAttribute("style", "display: none");
-            document.querySelector("#LogOut").setAttribute("style", "display: visible");
+            document.querySelector("#LogOut").setAttribute("style", "display: block");
         } else {
-            document.querySelector("#login-container").setAttribute("style", "display: visible");
+            document.querySelector("#login-container").setAttribute("style", "display: block");
             document.querySelector("#LogOut").setAttribute("style", "display: none");
         }
     });
@@ -162,8 +162,6 @@ async function loadBlog(e) {
         const blog = {...doc.data() }
 
         docsArr.push(blog);
-        // console.log(doc.id, " => ", doc.data());
-        console.log(blog)
     });
 
     const blogContainer = document.querySelector("#blog-container");
@@ -173,8 +171,6 @@ async function loadBlog(e) {
         <container class="blog-post-title">
             <h2>${el.title}</h2>
             <h3>${el.datetime}</h3>
-            <button class="editBtn">Edit</button>
-            <button class="deleteBtn">Delete</button>
         </container>
         <container class="blog-post-text">
             <article>${el.postText}</article>
@@ -186,25 +182,33 @@ async function loadBlog(e) {
     })
 
     auth.onAuthStateChanged(function(user) {
-        const editBtns = document.querySelectorAll(".editbtn");
-        const deleteBtns = document.querySelectorAll(".deleteBtn");
         if (user) {
-            editBtns.forEach((btn) => {
-                // console.log("in")
-                // btn.addEventListener("click", loadTemplateBlog);
-            })
-            deleteBtns.forEach((btn) => {
-                btn.addEventListener("click", deleteBlog);
-            })
+            document.querySelector("#addbtn").setAttribute("style", "display: block");
         } else {
-            editBtns.forEach((btn) => {
-                // btn.setAttribute("style", "display: none");
-            })
-            deleteBtns.forEach((btn) => {
-                btn.setAttribute("style", "display: none");
-            })
+            document.querySelector("#addbtn").setAttribute("style", "display: none");
         }
-    })
+    });
+
+    // auth.onAuthStateChanged(function(user) {
+    //     const editBtns = document.querySelectorAll(".editbtn");
+    //     const deleteBtns = document.querySelectorAll(".deleteBtn");
+    //     if (user) {
+    //         editBtns.forEach((btn) => {
+    //             // console.log("in")
+    //             // btn.addEventListener("click", loadTemplateBlog);
+    //         })
+    //         deleteBtns.forEach((btn) => {
+    //             btn.addEventListener("click", deleteBlog);
+    //         })
+    //     } else {
+    //         editBtns.forEach((btn) => {
+    //             // btn.setAttribute("style", "display: none");
+    //         })
+    //         deleteBtns.forEach((btn) => {
+    //             btn.setAttribute("style", "display: none");
+    //         })
+    //     }
+    // })
 
 }
 

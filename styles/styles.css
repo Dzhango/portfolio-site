@@ -74,7 +74,7 @@
         display: inline-block;
         border: none;
         padding: 1rem 2rem;
-        margin: 0;
+        margin: 1rem;
         text-decoration: none;
         background: #333;
         color: #ffffff;
@@ -359,4 +359,9 @@
         header input[type=text] {
             border: 1px solid #ccc;
         }
+    }
+    
+    #addbtn-container {
+        text-align: center;
+        width: 100%
     }

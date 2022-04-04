@@ -9,7 +9,9 @@
     <title>Dzhangir Bayandarov</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="scripts/index.js" defer></script>
+    <script type="module" src="scripts/firebase-config.js" async></script>
+    <script type="text/javascript" src="scripts/purify.min.js"></script>
+    <script type="module" src="scripts/home.js" defer></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLMKQJ7N24"></script>
     <script>
@@ -28,40 +30,79 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><button class="custom-btn" id="home-btn">Home</button></li>
+                <li><button class="custom-btn" id="projects-btn">Projects</button></li>
+                <li><button class="custom-btn" id="blog-btn">Blog</button></li>
+                <li id="login-container">
+                    <input type="text" placeholder="Username" name="username">
+                    <input type="text" placeholder="Password" name="psw">
+                    <button id="Login">Login</button>
+                </li>
+                <li><button id="LogOut">Logout</button></li>
+
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Welcome to my personal portfolio</h1>
+    </main>
+    <footer>
+        <container id="footer">
+            <button class="custom-btn">Contact me via email</button>
+            <figure>
+                <img class="icons" src="media/thumbs-up-solid.webp" alt="Instagram">
+                <figcaption>3</figcaption>
+            </figure>
+        </container>
+    </footer>
+
+    <template id="home-template">
+        <container class="typewriter">
+            <h1 class="typewriter">Hi, I'm Dzhangir, welcome to my personal portfolio!</h1>
+        </container>  
         <section id="bio">
             <div id="portrait">
                 <img id="avatar" src="media/profile.WebP" alt="Portrait Image">
                 <aside>
                     <ul>
-                        <li id="resume-link"><a href="https://docs.google.com/document/d/1e4_t7hTj4bJGwVMrqio8m5dUfSOUHcWPIIcH3FAjc3Y/edit?usp=sharing">Resume</a></li>
+                        <li id="resume-link">
+                            <a href="https://docs.google.com/document/d/1e4_t7hTj4bJGwVMrqio8m5dUfSOUHcWPIIcH3FAjc3Y/edit?usp=sharing">
+                                <figure>
+                                    <img class="icons" src="media/file-lines-solid.webp" alt="Instagram">
+                                    <figcaption>Resume</figcaption>
+                                </figure>
+                            </a>
+                        </li>
                         <li>
                             <a href="https://www.instagram.com/dzhangir.b/">
-                                <img class="icons" src="media/instagram-brands.webp" alt="Instagram">
+                                <figure>
+                                    <img class="icons" src="media/instagram-brands.webp" alt="Instagram">
+                                    <figcaption>Instagram</figcaption>
+                                </figure>
+                                
                             </a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/dbayanda/">
-                                <img class="icons" src="media/linkedin-in-brands.webp" alt="LinkedIn">
+                                <figure>
+                                    <img class="icons" src="media/linkedin-in-brands.webp" alt="LinkedIn">
+                                    <figcaption>LinkedIn</figcaption>
+                                </figure>
+                                
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/Dzhango">
-                                <img class="icons" src="media/github-brands.webp" alt="Github">
+                                <figure>
+                                    <img class="icons" src="media/github-brands.webp" alt="Github">
+                                    <figcaption>Github</figcaption>
+                                </figure>
                             </a>
                         </li>
                     </ul>
                 </aside>
             </div>
             <div id="introduction">
-                <h2>Hey there, I am Dzhangir!</h2>
+                <h2>A little about me:</h2>
                 <div>
                     <p>
                         I am a 3rd year computer science student at University of California, San Diego. I am an aspiring software engineer, interested in web technologies and product development. I value clear communication, growth mindset, and integrity of my work. I love
@@ -71,86 +112,114 @@
                 </div>
             </div>
         </section>
-        <template id="projects-template">
-            <section id="projects">
-                <h2>Projects Gallery</h2>
-                <container id="projects-container">
-                    <div class="project">
-                        <img src="media/project1.webp" alt="Project 1">
-                        <div class="project-desc">
-                            <h3>Project 1</h3>
-                            <p>Uptone is a consumer-media mobile startup being built for transforming monotonous content consumption into a fun and engaging experience. I have contributed to the implementation of the voice control part of the application. Utilizing
-                                AWS Transcribe API, I used the EXPO native voice recordings to control the application interface.</p>
-                        </div>
+    </template>
+    <template id="projects-template">
+        <section id="projects">
+            <h2>Projects Gallery</h2>
+            <container id="projects-container">
+                <div class="project">
+                    <img src="media/project1.webp" alt="Project 1">
+                    <div class="project-desc">
+                        <h3>Project 1</h3>
+                        <p>Uptone is a consumer-media mobile startup being built for transforming monotonous content consumption into a fun and engaging experience. I have contributed to the implementation of the voice control part of the application. Utilizing
+                            AWS Transcribe API, I used the EXPO native voice recordings to control the application interface.</p>
                     </div>
-                    <div class="project">
-                        <img src="media/project2.webp" alt="Project 2">
-                        <div class="project-desc">
-                            <h3>Project 2</h3>
-                            <p>This is a goal-sharing platform, users can register and create/share their goals libararies. I have used the MERN stack, and implemented authentication with express and JWT. This was my first big CRUD project, was particularly
-                                inspiring for me.</p>
-                        </div>
+                </div>
+                <div class="project">
+                    <img src="media/project2.webp" alt="Project 2">
+                    <div class="project-desc">
+                        <h3>Project 2</h3>
+                        <p>This is a goal-sharing platform, users can register and create/share their goals libararies. I have used the MERN stack, and implemented authentication with express and JWT. This was my first big CRUD project, was particularly
+                            inspiring for me.</p>
                     </div>
-                    <div class="project">
-                        <img src="media/project3.webp" alt="Project 3">
-                        <div class="project-desc">
-                            <h3>Project 3</h3>
-                            <p>This is a Web Search App to look up data on any stock. The running line at the bottom, scrapes the WallStreetBets subreddit, and provides the number of mentions and top comments for the current stock.</p>
-                        </div>
+                </div>
+                <div class="project">
+                    <img src="media/project3.webp" alt="Project 3">
+                    <div class="project-desc">
+                        <h3>Project 3</h3>
+                        <p>This is a Web Search App to look up data on any stock. The running line at the bottom, scrapes the WallStreetBets subreddit, and provides the number of mentions and top comments for the current stock.</p>
                     </div>
-                    <div class="project">
-                        <img src="media/project4.webp" alt="Project 4">
-                        <div class="project-desc">
-                            <h3>Project 4</h3>
-                            <p>This is a Web App, that calculates daily caloric intake based on physical measurements. I have built it when I was very new to react, so I have learned a lot of functional component structure, and state management. Plus, fitnesswas
-                                always a hobby of mine.</p>
-                        </div>
+                </div>
+                <div class="project">
+                    <img src="media/project4.webp" alt="Project 4">
+                    <div class="project-desc">
+                        <h3>Project 4</h3>
+                        <p>This is a Web App, that calculates daily caloric intake based on physical measurements. I have built it when I was very new to react, so I have learned a lot of functional component structure, and state management. Plus, fitnesswas
+                            always a hobby of mine.</p>
                     </div>
-                    <div class="project">
-                        <img src="media/project5.webp" alt="Project 5">
-                        <div class="project-desc">
-                            <h3>Project 5</h3>
-                            <p>Huffman Compressor is a compression program that can take a large text file and securely compress it. I utilized an efficient algorithm for header composition which more than double the speed of compression.</p>
-                        </div>
+                </div>
+                <div class="project">
+                    <img src="media/project5.webp" alt="Project 5">
+                    <div class="project-desc">
+                        <h3>Project 5</h3>
+                        <p>Huffman Compressor is a compression program that can take a large text file and securely compress it. I utilized an efficient algorithm for header composition which more than double the speed of compression.</p>
                     </div>
+                </div>
+            </container>
+        </section>
+    </template>
+    <template id="blog-template">
+        <container id="blog-container">
+            <container id="addbtn-container">
+                <button id="addbtn" class="custom-btn">Add Post</button>
+            </container>
+             <!--
+            <section class="blog">
+                <img src="media/blog-post1.webp" alt="blog image">
+                <container class="blog-post-title">
+                    <h2>Title</h2>
+                    <h3>Date</h3>
+                </container>
+                <container class="blog-post-text">
+                    <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</article>
+                    <button>READ MORE</button>
                 </container>
             </section>
-        </template>
-        <template id="blog-template">
-            <section id="blog">
-                <container>
-                    <article>Placeholder text</article>
+            <section class="blog">
+                <img src="media/blog-post2.webp" alt="blog image">
+                <container class="blog-post-title">
+                    <h2>Title</h2>
+                    <h3>Date</h3>
                 </container>
-                <container>
-                    <article>Placeholder text</article>
-                </container>
-                <container>
-                    <article>Placeholder text</article>
-                </container>
-                <container>
-                    <article>Placeholder text</article>
+                <container class="blog-post-text">
+                    <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</article>
+                    <button>READ MORE</button>
                 </container>
             </section>
-        </template>
-    </main>
-    <!-- <footer>
-        <section>
-            <button>Contact me via email</button>
-        </section>
-        <section>
-            <ul>
-                <li>Home</li>
-                <li>Blog</li>
-                <li>Resume</li>
-            </ul>
-            <ul>
-                <li>LinkedIn</li>
-                <li>Github</li>
-                <li>Instagram</li>
-            </ul>
-        </section>
+            <section class="blog">
+                <img src="media/blog-post3.webp" alt="blog image">
+                <container class="blog-post-title">
+                    <h2>Title</h2>
+                    <h3>Date</h3>
+                </container>
+                <container class="blog-post-text">
+                    <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</article>
+                    <button>READ MORE</button>
+                </container>
+            </section> -->
+        </container>
+    </template>
 
-    </footer> -->
+    <template id="create-template">
+    <container id="createPost">
+        <h1>Create a post</h1>
+        <!-- <div>
+            <label for="image">Attach an image:</label>
+            <input type="file" id="image" name="image">
+        </div> -->
+        <div>
+            <label for="title">Title:</label>
+            <textarea id="title" rows="2" cols="50" placeholder="Title.."></textarea>
+        </div>
+        <div>
+            <label>Post:</label>
+            <textarea id="post-text" placeholder="Blog away..." rows="10" cols="90"></textarea>
+        </div>
+        <div>
+            <button id="postbtn" type="submit" class="custom-btn">Post:</button>
+        </div>
+    </container>
+    </template>
 </body>
 
 </html>
